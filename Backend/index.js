@@ -1,6 +1,5 @@
 const express = require("express");
 const multer = require("multer");
-// const cors = require("cors");
 const docxToPDF = require("docx-pdf");
 const path = require("path");
 const fs = require("fs");
@@ -11,7 +10,10 @@ const port = process.env.PORT || 5000;
 
 const cors = require('cors');
 app.use(cors({
-  origin: ["https://file-morpher-frontend.vercel.app"]
+  origin: [
+    "https://file-morpher-frontend.vercel.app", // Production URL
+    "http://localhost:3000" // Local development URL
+  ]
 }));
 
 app.use(express.json());
