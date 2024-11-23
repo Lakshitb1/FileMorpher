@@ -9,7 +9,11 @@ const { PDFDocument } = require("pdf-lib");
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors(
+  {
+    origin: ["https://file-morpher-frontend.vercel.app/"],
+  }
+));
 app.use(express.json());
 
 // Ensure uploads directory exists
