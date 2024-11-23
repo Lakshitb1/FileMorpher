@@ -1,6 +1,6 @@
 const express = require("express");
 const multer = require("multer");
-const cors = require("cors");
+// const cors = require("cors");
 const docxToPDF = require("docx-pdf");
 const path = require("path");
 const fs = require("fs");
@@ -9,11 +9,11 @@ const { PDFDocument } = require("pdf-lib");
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors(
-  {
-    origin: ["https://file-morpher-frontend.vercel.app"],
-  }
-));
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://file-morpher-frontend.vercel.app'
+}));
+
 app.use(express.json());
 
 // Ensure uploads directory exists
