@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors(
   {
-    origin: ["https://file-morpher-frontend.vercel.app/"],
+    origin: ["https://file-morpher-frontend.vercel.app"],
   }
 ));
 app.use(express.json());
